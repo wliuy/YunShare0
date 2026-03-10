@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <style>
-  /* 1. 基础设定：所有链接默认都是深灰色 */
-  .sidebar-nav a {
-    color: #34495e !important;
-    font-weight: normal !important;
-    transition: color 0.3s;
+<style>
+  /* 1. 彻底移除原有的标题，不留任何占位 */
+  .app-name {
+    display: none !important;
   }
 
-  /* 2. 只要是被选中的链接，都变绿（这是默认规则） */
-  .sidebar-nav li a.active {
+  /* 2. 侧边栏布局：强制从顶部开始，不准弹性跳动 */
+  .sidebar {
+    padding-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  /* 3. 搜索框：强制排在第 1 位，高度和顶部间距焊死 */
+  .search {
+    order: -1 !important; /* 强制排在最顶端 */
+    margin: 0 !important;
+    padding: 25px 15px 10px 15px !important; /* 25px 是距离浏览器顶部的距离 */
+    background: #fff !important;
+    z-index: 10;
+  }
+
+  .search input {
+    height: 38px !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 4px !important;
+  }
+
+  /* 4. 菜单颜色逻辑：点哪哪绿 */
+  
+  /* 默认所有链接都是灰色 */
+  .sidebar-nav a {
+    color: #505d6b !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+  }
+
+  /* 只要被选中(active)就变绿 */
+  .sidebar-nav a.active {
     color: #42b983 !important;
     font-weight: bold !important;
   }
 
-  /* 3. 核心黑科技：排除法 */
-  /* 如果一个大类项目(li)里面包含了一个已经变绿的小类(a.active)，
-     那么这个大类自己的标题链接就要强行变回黑色 */
+  /* 【核心黑科技】如果子项目(li)里有绿色的 active，
+     那么它的父级(大类)就强行变回灰色，不准跟着绿 */
   .sidebar-nav li:has(li a.active) > a {
-    color: #34495e !important;
+    color: #505d6b !important;
     font-weight: normal !important;
   }
 
-  /* 4. 移除 YunShare 标题后的间距补偿（既然你把它删了） */
-  .app-name {
-    display: none !important; /* 彻底隐藏标题占位 */
-  }
-  
-  .search {
-    margin-bottom: 20px !important; /* 给搜索框下面留点空白，直接接菜单 */
+  /* 悬停效果：保持丝滑 */
+  .sidebar-nav a:hover {
+    color: #42b983 !important;
   }
 </style>
 <head>
