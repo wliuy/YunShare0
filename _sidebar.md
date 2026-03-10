@@ -6,8 +6,8 @@
   * [影视网站](p-video/web-sites.md)
 
 * 🎵 **音乐**
-  * [安卓手机 APP](p-video/music-android.md)
-  * [电脑音乐](p-video/music-pc.md)
+  * [安卓手机 APP](p-music/music-android.md)
+  * [电脑音乐](p-music/music-pc.md)
 
 * 📱 **手机 Android 软件**
   * [常用软件](p-android/changyong-app.md)
