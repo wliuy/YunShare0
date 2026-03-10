@@ -1,5 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <style>
+  /* 1. 锁死侧边栏顶部，不准它有任何弹性间距 */
+  .sidebar {
+    padding-top: 0 !important;
+  }
+
+  /* 2. 给搜索框一个绝对固定的“坑”，无论如何都不准动 */
+  .search {
+    margin-bottom: 0 !important;
+    padding: 20px 15px 10px 15px !important; /* 这里控制搜索框离最顶部的距离 */
+    height: 70px !important; /* 强制固定整个搜索区域的高度 */
+    box-sizing: border-box !important;
+  }
+
+  /* 3. 让标题 (YunShare) 紧跟在搜索框下面，间距写死 */
+  .app-name {
+    margin: 5px 0 15px 0 !important;
+    text-align: center;
+    font-size: 25px !important;
+    font-weight: 400;
+    display: block !important;
+  }
+
+  /* 4. 解决聚焦时的边框抖动 */
+  .search input {
+    height: 36px !important;
+    border: 1px solid #eee !important;
+  }
+</style>
 <head>
   <meta charset="UTF-8">
   <title>YunShare - 资源站</title>
