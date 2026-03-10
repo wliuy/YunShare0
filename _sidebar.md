@@ -1,15 +1,17 @@
 * [🏠 首页](README.md)
 
-* [🎬 影视](p-video/README.md)
-  * [安卓手机 APP](p-video/README.md?id=android-app)
-  * [电视 APP](p-video/README.md?id=tv-app)
-  * [影视网站](p-video/README.md?id=web-sites)
+* 🎬 **影视**
+  * [安卓手机 APP](p-video/android-app.md)
+  * [电视 APP](p-video/tv-app.md)
+  * [影视网站](p-video/web-sites.md)
 
-* [📱 手机 Android 软件](p-android/README.md)
+* 📱 **手机 Android 软件**
+  * [必备软件](p-android/software.md)
 
-* [💻 电脑常用软件](p-pc/README.md)
-  * [系统盘镜像](p-pc/README.md?id=os-disk)
-  * [装机必备软件](p-pc/README.md?id=essentials)
-  * [其他常用工具](p-pc/README.md?id=tools)
+* 💻 **电脑常用软件**
+  * [系统盘镜像](p-pc/os-disk.md)
+  * [装机必备软件](p-pc/essentials.md)
+  * [其他常用工具](p-pc/tools.md)
 
-* [📦 其他](p-other/README.md)
+* 📦 **其他**
+  * [资源整理](p-other/others.md)
