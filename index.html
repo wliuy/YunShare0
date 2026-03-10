@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <style>
-  /* 1. 彻底移除原有的标题，不留任何占位 */
+  /* 1. 彻底移除重复的标题，不留痕迹 */
   .app-name {
     display: none !important;
   }
 
-  /* 2. 侧边栏布局：强制从顶部开始，不准弹性跳动 */
+  /* 2. 搜索框位置：绝对锁死，预防“没内容时会跳” */
   .sidebar {
     padding-top: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
   }
 
-  /* 3. 搜索框：强制排在第 1 位，高度和顶部间距焊死 */
   .search {
-    order: -1 !important; /* 强制排在最顶端 */
+    order: -1 !important; /* 强制排在最上方 */
     margin: 0 !important;
-    padding: 25px 15px 10px 15px !important; /* 25px 是距离浏览器顶部的距离 */
+    padding: 25px 15px 15px 15px !important; /* 25px 离顶，15px 离底 */
     background: #fff !important;
-    z-index: 10;
+    height: 80px !important; /* 固定整个搜索区域高度 */
+    box-sizing: border-box !important;
   }
 
-  .search input {
-    height: 38px !important;
-    border: 1px solid #e0e0e0 !important;
-    border-radius: 4px !important;
-  }
+  /* 3. 侧边栏菜单颜色逻辑：核心部分 */
 
-  /* 4. 菜单颜色逻辑：点哪哪绿 */
-  
-  /* 默认所有链接都是灰色 */
+  /* 默认所有链接：深灰色，正常粗细 */
   .sidebar-nav a {
     color: #505d6b !important;
-    text-decoration: none !important;
     font-weight: normal !important;
+    text-decoration: none !important;
   }
 
-  /* 只要被选中(active)就变绿 */
-  .sidebar-nav a.active {
+  /* 【点击后常绿】只要是 Docsify 认定的活动链接，都变绿并加粗 */
+  .sidebar-nav li a.active {
     color: #42b983 !important;
     font-weight: bold !important;
   }
 
-  /* 【核心黑科技】如果子项目(li)里有绿色的 active，
-     那么它的父级(大类)就强行变回灰色，不准跟着绿 */
-  .sidebar-nav li:has(li a.active) > a {
+  /* 【独占逻辑】当你在看具体的“小类”时，强制让它上级的“大类”变回灰色 */
+  /* 逻辑：如果 <li> 里面包含了一个绿色的子项，那么这个 <li> 直属的第一个 <a> 必须变灰 */
+  .sidebar-nav li:has(ul li a.active) > a {
     color: #505d6b !important;
     font-weight: normal !important;
   }
 
-  /* 悬停效果：保持丝滑 */
+  /* 悬停效果：保持丝滑，不影响点击后的常绿 */
   .sidebar-nav a:hover {
     color: #42b983 !important;
+  }
+
+  /* 移除搜索框聚焦时的默认阴影，防止视觉抖动 */
+  .search input:focus {
+    box-shadow: none !important;
+    border-color: #42b983 !important;
   }
 </style>
 <head>
