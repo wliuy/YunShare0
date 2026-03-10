@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <style>
-  /* 1. 撤销大类的 active 样式（当它包含 active 子项时） */
-  .sidebar-nav li:has(ul li a.active) > a {
-    color: #505d6b !important; /* 恢复灰色 */
-    font-weight: normal !important;
-    border-right: none !important; /* 移除绿条 */
-  }
-
-  /* 2. 强制给当前真正点击的 a.active 加上样式 */
-  .sidebar-nav li a.active {
-    color: #42b983 !important;
-    border-right: 3px solid #42b983 !important;
-    display: block;
-  }
-</style>
 <head>
   <meta charset="UTF-8">
   <title>YunShare</title>
