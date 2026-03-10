@@ -8,11 +8,15 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app">资源加载中，请稍候...</div>
-  <script>
+<script>
     window.$docsify = {
       name: 'YunShare',
       loadSidebar: true, // 开启侧边栏
+      // 👇 下面这行是关键：强制所有文件夹都使用根目录的侧边栏
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      subMaxLevel: 0, // 建议先设为 0，让侧边栏最简化，排除干扰
       search: {
         maxAge: 86400000,
         paths: 'auto',
