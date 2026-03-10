@@ -5,8 +5,13 @@
   * [电视 APP](p-video/tv-app.md)
   * [影视网站](p-video/web-sites.md)
 
+* 🎵 **音乐**
+  * [安卓手机 APP](p-video/music-android.md)
+  * [电脑音乐](p-video/music-pc.md)
+
 * 📱 **手机 Android 软件**
-  * [必备软件](p-android/software.md)
+  * [常用软件](p-android/changyong-app.md)
+  * [Root相关](p-android/root.md)
 
 * 💻 **电脑常用软件**
   * [系统盘镜像](p-pc/os-disk.md)
