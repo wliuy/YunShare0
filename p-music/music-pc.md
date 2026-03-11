@@ -17,7 +17,7 @@
 
 ## 📥 资源下载
 
-* **软件下载 (夸克网盘)**：[点击跳转保存](https://pan.quark.cn/s/b1f88ac61ff8)
+* **软件下载(夸克网盘)**：[点击跳转保存](https://pan.quark.cn/s/b1f88ac61ff8)
 * **插件接口链接**：`https://musicfreepluginshub.2020818.xyz/plugins.json`
 * **更多内容请访问作者原仓库**
 
