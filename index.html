@@ -1,90 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <style>
-  /* 1. 强力压缩分割线 (---) 的上下间距 */
-  .markdown-section hr {
-    margin: 15px 0 !important; /* 原本可能是 2em 以上，现在砍到 15px */
-    height: 1px !important;
-  }
-
-  /* 2. 强力压缩各级标题的上下边距 */
-  .markdown-section h1, 
-  .markdown-section h2, 
-  .markdown-section h3, 
-  .markdown-section h4 {
-    margin-top: 20px !important;    /* 标题上方的间距从 1.5em 缩到 20px */
-    margin-bottom: 8px !important;  /* 标题下方的间距 */
-    padding: 0 !important;
-  }
-
-  /* 3. 强力压缩段落、列表、代码块之间的间距 */
-  .markdown-section p, 
-  .markdown-section ul, 
-  .markdown-section ol, 
-  .markdown-section pre,
-  .markdown-section blockquote {
-    margin-top: 0 !important;
-    margin-bottom: 8px !important; /* 每个区块下方的间距缩到 8px */
-  }
-
-  /* 4. 特别针对你截图里的列表项对齐优化 */
-  .markdown-section li {
-    margin-bottom: 4px !important;
-  }
-
-  /* 5. 调整整体内边距，让内容不要离搜索框太远 */
-  .markdown-section {
-    padding-top: 10px !important;
-  }
-/* 1. 模拟 GitHub 的搜索框锁定 */
-  .app-name { display: none !important; }
-  .sidebar { padding-top: 0 !important; background-color: #f6f8fa !important; border-right: 1px solid #d0d7de !important; }
-  .search {
-    margin: 0 !important;
-    padding: 20px 15px !important;
-    background: #f6f8fa !important;
-  }
-  
-  /* 2. 侧边栏点击绿条（GitHub 风格是蓝色或灰色，这里保留你喜欢的绿色） */
-  .sidebar-nav li a.active {
-    color: #42b983 !important;
-    border-right: 2px solid #42b983 !important;
-    font-weight: 600 !important;
-  }
-
-  /* 3. 核心：确保 Markdown 内容区域的字体和间距对齐 GitHub */
-  .markdown-section {
-    max-width: 900px !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
-  }
-  
-  /* 解决加粗显示不出来的问题：强制加粗样式 */
-  .markdown-section strong, .markdown-section b {
-    font-weight: 600 !important;
-  }
-</style>
   <meta charset="UTF-8">
-  <title>YunShare</title>
+  <title>YunShare | 云享资源站</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/github.css">
+  <style>
+    /* --- 侧边栏及搜索框锁定 (GitHub 质感) --- */
+    .app-name { display: none !important; }
+    .sidebar { 
+      padding-top: 0 !important; 
+      background-color: #f6f8fa !important; 
+      border-right: 1px solid #d0d7de !important; 
+    }
+    .search {
+      margin: 0 !important;
+      padding: 20px 15px !important;
+      background: #f6f8fa !important;
+      height: 80px !important; /* 锁定高度防止跳动 */
+      box-sizing: border-box !important;
+    }
+    .search input { border-radius: 6px !important; border: 1px solid #d0d7de !important; }
+
+    /* --- 侧边栏链接样式 --- */
+    .sidebar-nav a { color: #0969da !important; text-decoration: none !important; }
+    .sidebar-nav li a.active {
+      color: #24292f !important;
+      font-weight: 600 !important;
+      border-left: 2px solid #fd8c73 !important; /* GitHub 典型的橙色激活条，你也可以改回绿色 #42b983 */
+      background: #ffffff !important;
+    }
+
+    /* --- 正文间距压缩 (保持紧凑) --- */
+    .markdown-section { padding: 30px 45px !important; max-width: 900px !important; }
+    .markdown-section hr { margin: 15px 0 !important; height: 1px !important; background-color: #d0d7de !important; border: none !important; }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 600 !important; }
+    .markdown-section p, .markdown-section ul, .markdown-section ol { margin-top: 0 !important; margin-bottom: 10px !important; }
+    .markdown-section li { margin-bottom: 4px !important; }
+    
+    /* 解决之前你头疼的对齐问题：因为现在加了空行，不需要负边距了 */
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-left: 0 !important; }
+  </style>
 </head>
 <body>
-  <div id="app">正在加载...</div>
+  <div id="app">🏃 正在全力加载资源...</div>
   <script>
     window.$docsify = {
-      loadSidebar: true,
-      // 这是为了保证子文件夹里的页面也能找到侧边栏，建议保留
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      },
+      name: 'YunShare',
+      loadSidebar: true, // 必须开启
+      alias: { '/.*/_sidebar.md': '/_sidebar.md' },
       subMaxLevel: 0,
+      auto2top: true,
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: '搜索...',
-        noData: '找不到结果',
+        placeholder: '在站内搜索资源...',
+        noData: '未找到相关资源',
         depth: 6
       }
     }
