@@ -37,6 +37,27 @@
   .markdown-section {
     padding-top: 10px !important;
   }
+/* 核心：强行拉回嵌套在列表里的标题，解决“2往右偏” */
+  .markdown-section li h1, 
+  .markdown-section li h2, 
+  .markdown-section li h3 {
+    margin-left: -32px !important; /* 强制向左位移，抵消列表缩进 */
+    padding-left: 0 !important;
+    display: block !important;
+  }
+
+  /* 同样把嵌套在列表里的分割线也拽回来，保持全屏宽度 */
+  .markdown-section li hr {
+    margin-left: -32px !important;
+    width: calc(100% + 32px) !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* 去掉标题左侧可能出现的默认图标占位 */
+  .anchor {
+    margin-left: -20px !important;
+  }
 </style>
   <meta charset="UTF-8">
   <title>YunShare</title>
