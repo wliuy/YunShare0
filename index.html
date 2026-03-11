@@ -5,63 +5,37 @@
   <title>YunShare | 云享资源站</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/github.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify@4/lib/themes/github.css">
   <style>
-    /* --- 侧边栏及搜索框锁定 (GitHub 质感) --- */
+    /* 锁定搜索框，解决跳动 */
     .app-name { display: none !important; }
-    .sidebar { 
-      padding-top: 0 !important; 
-      background-color: #f6f8fa !important; 
-      border-right: 1px solid #d0d7de !important; 
-    }
-    .search {
-      margin: 0 !important;
-      padding: 20px 15px !important;
-      background: #f6f8fa !important;
-      height: 80px !important; /* 锁定高度防止跳动 */
-      box-sizing: border-box !important;
-    }
-    .search input { border-radius: 6px !important; border: 1px solid #d0d7de !important; }
-
-    /* --- 侧边栏链接样式 --- */
-    .sidebar-nav a { color: #0969da !important; text-decoration: none !important; }
-    .sidebar-nav li a.active {
-      color: #24292f !important;
-      font-weight: 600 !important;
-      border-left: 2px solid #fd8c73 !important; /* GitHub 典型的橙色激活条，你也可以改回绿色 #42b983 */
-      background: #ffffff !important;
-    }
-
-    /* --- 正文间距压缩 (保持紧凑) --- */
-    .markdown-section { padding: 30px 45px !important; max-width: 900px !important; }
-    .markdown-section hr { margin: 15px 0 !important; height: 1px !important; background-color: #d0d7de !important; border: none !important; }
-    .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 600 !important; }
-    .markdown-section p, .markdown-section ul, .markdown-section ol { margin-top: 0 !important; margin-bottom: 10px !important; }
-    .markdown-section li { margin-bottom: 4px !important; }
-    
-    /* 解决之前你头疼的对齐问题：因为现在加了空行，不需要负边距了 */
-    .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-left: 0 !important; }
+    .sidebar { padding-top: 0 !important; background-color: #f6f8fa !important; }
+    .search { margin: 0 !important; padding: 20px 15px !important; background: #f6f8fa !important; height: 80px !important; box-sizing: border-box !important; }
+    /* 侧边栏绿条 */
+    .sidebar-nav li a.active { color: #42b983 !important; border-right: 3px solid #42b983 !important; font-weight: 600 !important; }
+    /* 压缩间距，因为你现在加了空行，这里的间距会很舒服 */
+    .markdown-section { padding: 30px 45px !important; }
+    .markdown-section hr { margin: 15px 0 !important; }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-top: 20px !important; margin-bottom: 10px !important; }
   </style>
 </head>
 <body>
-  <div id="app">🏃 正在全力加载资源...</div>
+  <div id="app">🏃 正在加载，如果长时间没反应请检查网络...</div>
   <script>
     window.$docsify = {
-      name: 'YunShare',
-      loadSidebar: true, // 必须开启
+      loadSidebar: true,
       alias: { '/.*/_sidebar.md': '/_sidebar.md' },
       subMaxLevel: 0,
       auto2top: true,
       search: {
-        maxAge: 86400000,
         paths: 'auto',
-        placeholder: '在站内搜索资源...',
-        noData: '未找到相关资源',
+        placeholder: '搜索资源...',
+        noData: '找不到',
         depth: 6
       }
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://unpkg.com/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
