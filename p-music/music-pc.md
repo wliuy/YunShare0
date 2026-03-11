@@ -11,7 +11,7 @@
 
 * **项目主页**：[GitHub - MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 * **核心特点**：开源免费、无广告、支持自定义主题、支持多平台插件。
-* **配合项目**：[作者原仓库](https://github.com/xxnuo/MusicFreePluginsHub)
+* **配合项目**：[MusicFreePluginsHub](https://github.com/xxnuo/MusicFreePluginsHub)
 * **插件接口链接**：`https://musicfreepluginshub.2020818.xyz/plugins.json`
 * **使用方法：插件管理-从网络安装插件-填入链接**
 ---
