@@ -11,29 +11,13 @@
 
 * **项目主页**：[GitHub - MusicFreeDesktop](https://github.com/maotoumao/MusicFreeDesktop)
 * **核心特点**：开源免费、无广告、支持自定义主题、支持多平台插件。
-
+* **配合项目**：[作者原仓库](https://github.com/xxnuo/MusicFreePluginsHub)
+* **插件接口链接**：`https://musicfreepluginshub.2020818.xyz/plugins.json`
+* **使用方法：插件管理-从网络安装插件-填入链接**
 ---
 
 ## 📥 资源下载
 
 * **软件下载（夸克网盘）**：[点击跳转保存](https://pan.quark.cn/s/b1f88ac61ff8)
 
-* **插件接口链接**：`https://musicfreepluginshub.2020818.xyz/plugins.json`
-
-* **更多内容请访问**：[作者原仓库](https://github.com/xxnuo/MusicFreePluginsHub)
-
----
-
-## 📖 使用教程
-
-### 插件导入步骤
-由于 MusicFree 是“插件化”运行，安装后需手动导入接口：
-
-1. 打开软件，进入 **设置** -> **插件管理**。
-2. 点击 **从网络导入**。
-3. 复制并粘贴下方的插件链接，点击确定即可完成全网音源配置。
-
-**插件链接：**
-`https://musicfreepluginshub.2020818.xyz/plugins.json`
-
----
+* **更多内容请访问作者原仓库**
