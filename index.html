@@ -7,6 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* 仅控制侧边栏宽度：PC端缩减至 220px，手机端 180px */
+    :root {
+      --sidebar-width: 220px;
+    }
+    @media screen and (max-width: 768px) {
+      :root {
+        --sidebar-width: 180px;
+      }
+    }
+    .sidebar {
+      width: var(--sidebar-width) !important;
+    }
+    section.content {
+      padding-left: var(--sidebar-width) !important;
+    }
+    @media screen and (max-width: 768px) {
+      section.content {
+        padding-left: 0 !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="app">🏃 正在加载 YunShare...</div>
