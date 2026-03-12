@@ -8,26 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* 仅缩减侧边栏宽度，不改动任何内容布局 */
-    :root {
-      --sidebar-width: 220px;
-    }
-    @media screen and (max-width: 768px) {
-      :root {
-        --sidebar-width: 160px;
-      }
-    }
+/* 修改侧边栏宽度：电脑端 220px / 手机端 180px */
+  .sidebar {
+    width: 220px !important;
+  }
+  section.content {
+    padding-left: 220px !important;
+  }
+  @media screen and (max-width: 768px) {
     .sidebar {
-      width: var(--sidebar-width) !important;
+      width: 180px !important;
     }
     section.content {
-      padding-left: var(--sidebar-width) !important;
+      padding-left: 0 !important;
     }
-    @media screen and (max-width: 768px) {
-      section.content {
-        padding-left: 0 !important;
-      }
-    }
+  }
+</style>
   </style>
 </head>
 <body>
