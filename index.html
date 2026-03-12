@@ -8,23 +8,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 0. 仅新增：侧边栏宽度精准控制 (PC 240px / 手机 200px) --- */
+    /* --- 1. 参考好用斋：极窄侧边栏与紧凑对齐 --- */
     :root {
-      --sidebar-width: 240px;
+      --sidebar-width: 220px; /* 调窄侧边栏，电脑端更精致 */
     }
     @media screen and (max-width: 768px) {
       :root {
-        --sidebar-width: 200px;
+        --sidebar-width: 190px; /* 手机端保持窄版，不影响开关逻辑 */
       }
     }
-    .sidebar { width: var(--sidebar-width) !important; }
-    section.content { padding-left: var(--sidebar-width) !important; }
+    .sidebar { width: var(--sidebar-width) !important; padding-top: 0 !important; }
+    
+    /* 核心修复：取消居中，让内容紧贴侧边栏 */
+    section.content {
+      padding-left: var(--sidebar-width) !important;
+      position: static !important;
+      margin: 0 !important; /* 彻底取消自动居中导致的靠右 */
+    }
+    .markdown-section {
+      max-width: 100% !important; /* 允许内容利用剩余空间 */
+      padding: 30px 40px !important;
+      margin: 0 !important; /* 确保左对齐 */
+    }
+
     @media screen and (max-width: 768px) {
       section.content { padding-left: 0 !important; }
     }
-    /* --- 1. 锁死搜索框与侧边栏 (还原好用斋布局) --- */
+
+    /* --- 2. 锁死搜索框布局 --- */
     .app-name { display: none !important; }
-    .sidebar { padding-top: 0 !important; }
     .search {
       margin: 0 !important;
       padding: 25px 15px 15px 15px !important;
@@ -35,10 +47,10 @@
     .sidebar-nav li a.active {
       color: #42b983 !important;
       font-weight: 600 !important;
-      border-right: 3px solid #42b983 !important; /* 右侧绿条 */
+      border-right: 3px solid #42b983 !important;
     }
-    /* --- 2. 压缩间距 --- */
-    .markdown-section { padding-top: 15px !important; }
+
+    /* --- 3. 压缩间距 (精致排版) --- */
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
       margin-top: 20px !important;
