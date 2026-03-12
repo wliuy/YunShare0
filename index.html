@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 侧边栏宽度定义 --- */
+    /* --- 1. 核心布局变量 --- */
     :root {
       --sidebar-width: 240px;
     }
@@ -17,28 +17,54 @@
         --sidebar-width: 200px;
       }
     }
-    .sidebar { width: var(--sidebar-width) !important; padding-top: 0 !important; }
 
-    /* --- 2. 核心修复：左对齐，但预留舒适间距 --- */
+    /* --- 2. 电脑端逻辑：侧边栏“推”内容 (Side-by-side) --- */
+    .sidebar {
+      width: var(--sidebar-width) !important;
+      padding-top: 0 !important;
+      background: #fff !important;
+      transition: transform 0.25s ease-out, width 0.25s ease-out !important;
+    }
     section.content {
+      /* 电脑端默认 padding，侧边栏占位并把内容“推”向右边 */
       padding-left: var(--sidebar-width) !important;
-      left: 0 !important;
+      transition: all 0.25s ease-out !important;
       position: static !important;
     }
-    .markdown-section {
-      /* 限制最大宽度，防止内容在 4K 屏拉得太长，同时保持左对齐 */
-      max-width: 1000px !important; 
-      /* 这里的 80px 就是解决“太靠左”的关键间距 */
-      padding: 35px 80px !important; 
-      margin: 0 !important; 
+    /* 电脑端收起菜单时（Docsify 默认逻辑） */
+    body.close section.content {
+      padding-left: 0 !important;
     }
 
+    /* --- 3. 手机端逻辑：侧边栏“悬浮”覆盖 (Overlay) --- */
     @media screen and (max-width: 768px) {
-      section.content { padding-left: 0 !important; }
-      .markdown-section { padding: 20px 25px !important; }
+      /* 强制正文不位移、不缩小，稳如泰山 */
+      section.content {
+        padding-left: 0 !important;
+        transform: none !important; 
+        transition: none !important;
+      }
+      /* 侧边栏改为高层级悬浮，直接盖在正文上面 */
+      .sidebar {
+        position: fixed !important;
+        z-index: 100 !important;
+        height: 100% !important;
+        /* 初始状态隐藏在左侧外 */
+        transform: translateX(calc(-1 * var(--sidebar-width))) !important;
+      }
+      /* 手机端打开菜单时滑入 */
+      body:not(.close) .sidebar {
+        transform: translateX(0) !important;
+        box-shadow: 10px 0 25px rgba(0,0,0,0.1);
+      }
+      /* 确保内部元素可见 */
+      .sidebar-nav, .search {
+        display: block !important;
+        visibility: visible !important;
+      }
     }
 
-    /* --- 3. 搜索框布局 --- */
+    /* --- 4. 样式细节 (参考好用斋对齐) --- */
     .app-name { display: none !important; }
     .search {
       margin: 0 !important;
@@ -46,27 +72,28 @@
       height: 80px !important;
       background: #fff;
       box-sizing: border-box !important;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .search input {
+      border-radius: 8px !important;
+      background: #f3f4f6 !important;
+      font-size: 13px !important;
     }
     .sidebar-nav li a.active {
       color: #42b983 !important;
       font-weight: 600 !important;
       border-right: 3px solid #42b983 !important;
     }
-
-    /* --- 4. 紧凑排版优化 (严格遵守无空行原则) --- */
+    .markdown-section {
+      max-width: 1000px !important;
+      padding: 30px 60px !important; /* 左对齐并预留舒适间距 */
+      margin: 0 !important;
+    }
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
-    .markdown-section h1, .markdown-section h2, .markdown-section h3 {
-      margin-top: 20px !important;
-      margin-bottom: 10px !important;
-    }
-    .markdown-section p, .markdown-section ul, .markdown-section ol {
-      margin-bottom: 10px !important;
-    }
-    .markdown-section table { display: block; overflow-x: auto; margin-bottom: 20px; }
   </style>
 </head>
 <body>
-  <div id="app">🏃 正在回归经典布局...</div>
+  <div id="app">🏃 正在加载 YunShare...</div>
   <script>
     window.$docsify = {
       loadSidebar: true,
