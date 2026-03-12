@@ -8,59 +8,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 侧边栏宽度瘦身 (从 300px 压缩至 240px) --- */
+    /* --- 1. 双端侧边栏宽度控制 (PC 240px / 移动 190px) --- */
     :root {
       --sidebar-width: 240px;
     }
+    @media screen and (max-width: 768px) {
+      :root {
+        --sidebar-width: 190px;
+      }
+    }
     .sidebar {
       width: var(--sidebar-width) !important;
-      padding-top: 0 !important;
+      padding-top: 0 !important; /* 配合置顶搜索框 */
+      border-right: 1px solid rgba(0,0,0,.07);
     }
     section.content {
       padding-left: var(--sidebar-width) !important;
     }
-    /* 适配手机端收起逻辑 */
+    /* 适配手机端原生开关逻辑 */
     @media screen and (max-width: 768px) {
       section.content { padding-left: 0 !important; }
       .sidebar { width: var(--sidebar-width) !important; }
+      body.close .sidebar { transform: translateX(calc(-1 * var(--sidebar-width))) !important; }
     }
-    /* --- 2. 锁死搜索框与侧边栏 --- */
+
+    /* --- 2. 搜索框与侧边栏样式定制 --- */
     .app-name { display: none !important; }
     .search {
       margin: 0 !important;
-      padding: 25px 15px 15px 15px !important;
+      padding: 25px 12px 15px 12px !important;
       height: 80px !important;
       background: #fff;
       box-sizing: border-box !important;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .search input {
+      border-radius: 8px !important;
+      background: #f3f4f6 !important;
+      font-size: 14px !important;
     }
     .sidebar-nav li a.active {
       color: #42b983 !important;
       font-weight: 600 !important;
       border-right: 3px solid #42b983 !important;
+      background: linear-gradient(to right, rgba(66,185,131,0.05), rgba(66,185,131,0.1));
     }
-    /* --- 3. 压缩间构 (精致排版) --- */
-    .markdown-section { padding-top: 15px !important; }
-    .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
+
+    /* --- 3. 页面内容紧凑排版 (针对无空行源码优化) --- */
+    .markdown-section { 
+      padding-top: 15px !important; 
+      max-width: 900px !important; 
+    }
+    .markdown-section hr { 
+      margin: 15px 0 !important; 
+      height: 1px !important; 
+      border: none !important; 
+      background: rgba(0,0,0,.05) !important;
+    }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
-      margin-top: 20px !important;
-      margin-bottom: 10px !important;
+      margin-top: 25px !important;
+      margin-bottom: 12px !important;
       padding: 0 !important;
+      line-height: 1.3 !important;
     }
     .markdown-section p, .markdown-section ul, .markdown-section ol {
       margin-top: 0 !important;
-      margin-bottom: 8px !important;
+      margin-bottom: 10px !important;
     }
-    .markdown-section li { margin-bottom: 4px !important; }
+    .markdown-section li { margin-bottom: 5px !important; }
+    
+    /* 表格在窄屏下的滚动支持 */
+    .markdown-section table {
+      display: block !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+      margin-bottom: 15px !important;
+    }
   </style>
 </head>
 <body>
-  <div id="app">🏃 正在回归经典布局...</div>
+  <div id="app">🏃 正在加载 YunShare 资源站...</div>
   <script>
     window.$docsify = {
+      // 侧边栏配置
       loadSidebar: true,
       alias: { '/.*/_sidebar.md': '/_sidebar.md' },
       subMaxLevel: 0,
+      
+      // 通用配置
       auto2top: true,
+      name: 'YunShare',
+      
+      // 搜索配置
       search: {
         paths: 'auto',
         placeholder: '搜索资源...',
