@@ -8,70 +8,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 宽度变量 --- */
+    /* --- 1. 布局变量 --- */
     :root {
-      --sidebar-width: 260px; /* 侧边栏稍微加宽一点，显得更稳重 */
+      --sidebar-width: 240px;
     }
     @media screen and (max-width: 768px) {
       :root {
-        --sidebar-width: 210px;
+        --sidebar-width: 200px;
       }
     }
-
-    /* --- 2. 电脑端逻辑：侧边栏“推”内容 (左对齐 + 宽阔间距) --- */
+    /* --- 2. 核心“推拉”逻辑 --- */
     .sidebar {
       width: var(--sidebar-width) !important;
       padding-top: 0 !important;
       background: #fff !important;
-      z-index: 20;
+      transition: transform 0.25s ease !important;
     }
     section.content {
-      /* 电脑端通过 padding 实现“推”的效果 */
+      /* 核心：通过 padding 实现推拉，全端统一 */
       padding-left: var(--sidebar-width) !important;
       position: static !important;
       transition: padding-left 0.25s ease !important;
     }
-    /* 重点：增加内容与侧边栏的距离，从 60px 提升到 100px */
+    /* 菜单关闭时，内容区回归 */
+    body.close section.content {
+      padding-left: 0 !important;
+    }
+    /* --- 3. 内容区对齐与间距 (参考好用斋) --- */
     .markdown-section {
       max-width: 1000px !important;
+      /* 电脑端 100px 间距，解决“太近”问题 */
       padding: 40px 100px !important; 
       margin: 0 !important; /* 保持左对齐 */
     }
-
-    /* --- 3. 手机端逻辑：真正的“悬浮” + 修复点击失效 --- */
     @media screen and (max-width: 768px) {
-      section.content {
-        padding-left: 0 !important;
-        transform: none !important; /* 强制内容不被推走 */
-      }
       .markdown-section {
-        padding: 20px 25px !important;
-      }
-      .sidebar {
-        position: fixed !important;
-        z-index: 1000 !important; /* 极高层级，确保悬浮 */
-        transform: translateX(calc(-1 * var(--sidebar-width))) !important;
-      }
-      /* 菜单打开状态 */
-      body:not(.close) .sidebar {
-        transform: translateX(0) !important;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.15);
-      }
-      /* 修复：确保手机端开关按钮在最上层且可点 */
-      .sidebar-toggle {
-        display: block !important;
-        z-index: 1100 !important;
-        background: rgba(255, 255, 255, 0.8) !important;
-        width: 44px;
-        height: 44px;
-        left: 20px !important;
-        bottom: 20px !important;
-        border-radius: 50%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* 手机端空间有限，间距设小 */
+        padding: 20px 15px !important;
       }
     }
-
-    /* --- 4. 搜索框与 UI --- */
+    /* --- 4. 搜索框与 UI 细节 --- */
     .app-name { display: none !important; }
     .search {
       margin: 0 !important;
@@ -87,9 +63,8 @@
       font-weight: 600 !important;
       border-right: 3px solid #42b983 !important;
     }
-
-    /* --- 5. 排版精简 --- */
-    .markdown-section hr { margin: 15px 0 !important; }
+    /* --- 5. 紧凑排版 --- */
+    .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 { margin-top: 25px !important; }
   </style>
 </head>
