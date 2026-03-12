@@ -1,12 +1,12 @@
 * [🏠 **首页**](README.md)
 
 * 🎬 **影视**
-  * [安卓手机 APP](video/android-app.md)
+  * [安卓影视](video/android-app.md)
   * [电视 APP](video/tv-app.md)
   * [影视网站](video/web-sites.md)
 
 * 🎵 **音乐**
-  * [安卓手机 APP](music/music-android.md)
+  * [安卓音乐](music/music-android.md)
   * [电脑音乐](music/music-pc.md)
 
 * 📱 **手机 Android 软件**
