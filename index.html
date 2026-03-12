@@ -8,30 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 <style>
-  /* 1. 定义侧边栏宽度：电脑 220px / 手机 180px */
+  /* 电脑端：侧边栏220px，内容区固定在220px位置 */
   .sidebar {
     width: 220px !important;
   }
-  
-  /* 2. 核心修正：用 padding 实现“推拉”，并增加动画过渡 */
   section.content {
-    left: 0 !important; /* 把之前写死的 left 归零，交给 padding 处理 */
-    padding-left: 220px !important;
-    transition: padding-left 0.25s ease !important; /* 增加滑动的丝滑感 */
+    left: 220px !important;
   }
 
-  /* 3. 当菜单关闭时（body 有 close 类），padding 归零，内容才会推回来 */
-  body.close section.content {
-    padding-left: 0 !important;
-  }
-
-  /* 4. 手机端适配 */
   @media screen and (max-width: 768px) {
     .sidebar {
       width: 180px !important;
     }
     section.content {
-      padding-left: 0 !important; /* 手机端由 Docsify 原生位移接管 */
+      left: 0 !important; /* 保证内容占满全屏 */
+      transform: none !important; /* 核心：禁止被推走，实现悬浮效果 */
     }
   }
 </style>
