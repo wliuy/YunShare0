@@ -8,90 +8,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 定义全局宽度变量 --- */
+    /* --- 1. 仅新增：侧边栏宽度变量 (PC 240 / 手机 200) --- */
     :root {
-      --sidebar-width: 240px; /* 电脑端默认 */
+      --sidebar-width: 240px;
     }
     @media screen and (max-width: 768px) {
       :root {
-        --sidebar-width: 190px; /* 手机端窄版 */
+        --sidebar-width: 200px;
       }
     }
-
-    /* --- 2. 核心布局修复 (移除所有强制位移) --- */
-    .sidebar {
-      width: var(--sidebar-width) !important;
-      padding-top: 0 !important;
-      transition: transform 0.25s ease !important;
-    }
-    section.content {
-      padding-left: var(--sidebar-width) !important;
-      left: 0 !important; /* 强制归零，防止二次位移 */
-      position: absolute !important;
-      right: 0 !important;
-    }
-
-    /* --- 3. 手机端专项适配 --- */
+    .sidebar { width: var(--sidebar-width) !important; }
+    section.content { padding-left: var(--sidebar-width) !important; }
     @media screen and (max-width: 768px) {
-      /* 内容区手机端占满全屏 */
-      section.content {
-        padding-left: 0 !important;
-      }
-      /* 找回开关按钮并固定位置 */
-      .sidebar-toggle {
-        display: block !important;
-        background: rgba(255, 255, 255, 0.8) !important;
-        padding: 10px !important;
-        bottom: 20px !important; /* 放在左下角方便操作 */
-        left: 20px !important;
-        width: 44px !important;
-        height: 44px !important;
-        border-radius: 50% !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-      }
-      /* 手机端侧边栏初始状态（隐藏） */
-      .sidebar {
-        transform: translateX(calc(-1 * var(--sidebar-width))) !important;
-      }
-      /* 手机端展开状态 */
-      body:not(.close) .sidebar {
-        transform: translateX(0) !important;
-      }
+      section.content { padding-left: 0 !important; }
     }
 
-    /* --- 4. UI 细节优化 --- */
+    /* --- 2. 以下完全保留你提供的原始代码 --- */
     .app-name { display: none !important; }
+    .sidebar { padding-top: 0 !important; }
     .search {
       margin: 0 !important;
-      padding: 25px 12px 15px 12px !important;
+      padding: 25px 15px 15px 15px !important;
       height: 80px !important;
       background: #fff;
       box-sizing: border-box !important;
-      border-bottom: 1px solid rgba(0,0,0,.05);
-    }
-    .search input {
-      border-radius: 8px !important;
-      background: #f3f4f6 !important;
-      font-size: 13px !important;
     }
     .sidebar-nav li a.active {
       color: #42b983 !important;
       font-weight: 600 !important;
-      border-right: 3px solid #42b983 !important;
+      border-right: 3px solid #42b983 !important; /* 右侧绿条 */
     }
 
-    /* --- 5. 紧凑排版 --- */
-    .markdown-section { 
-      padding-top: 15px !important; 
-      max-width: 900px !important; 
-      margin: 0 auto !important; 
-    }
+    /* --- 3. 压缩间距 --- */
+    .markdown-section { padding-top: 15px !important; }
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
-    .markdown-section table { display: block; overflow-x: auto; }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 {
+      margin-top: 20px !important;
+      margin-bottom: 10px !important;
+      padding: 0 !important;
+    }
+    .markdown-section p, .markdown-section ul, .markdown-section ol {
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+    }
+    .markdown-section li { margin-bottom: 4px !important; }
   </style>
 </head>
 <body>
-  <div id="app">🏃 正在加载 YunShare...</div>
+  <div id="app">🏃 正在回归经典布局...</div>
   <script>
     window.$docsify = {
       loadSidebar: true,
