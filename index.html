@@ -8,34 +8,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 参考好用斋：极窄侧边栏与紧凑对齐 --- */
+    /* --- 1. 侧边栏宽度定义 --- */
     :root {
-      --sidebar-width: 220px; /* 调窄侧边栏，电脑端更精致 */
+      --sidebar-width: 240px;
     }
     @media screen and (max-width: 768px) {
       :root {
-        --sidebar-width: 190px; /* 手机端保持窄版，不影响开关逻辑 */
+        --sidebar-width: 200px;
       }
     }
     .sidebar { width: var(--sidebar-width) !important; padding-top: 0 !important; }
-    
-    /* 核心修复：取消居中，让内容紧贴侧边栏 */
+
+    /* --- 2. 核心修复：左对齐，但预留舒适间距 --- */
     section.content {
       padding-left: var(--sidebar-width) !important;
+      left: 0 !important;
       position: static !important;
-      margin: 0 !important; /* 彻底取消自动居中导致的靠右 */
     }
     .markdown-section {
-      max-width: 100% !important; /* 允许内容利用剩余空间 */
-      padding: 30px 40px !important;
-      margin: 0 !important; /* 确保左对齐 */
+      /* 限制最大宽度，防止内容在 4K 屏拉得太长，同时保持左对齐 */
+      max-width: 1000px !important; 
+      /* 这里的 80px 就是解决“太靠左”的关键间距 */
+      padding: 35px 80px !important; 
+      margin: 0 !important; 
     }
 
     @media screen and (max-width: 768px) {
       section.content { padding-left: 0 !important; }
+      .markdown-section { padding: 20px 25px !important; }
     }
 
-    /* --- 2. 锁死搜索框布局 --- */
+    /* --- 3. 搜索框布局 --- */
     .app-name { display: none !important; }
     .search {
       margin: 0 !important;
@@ -50,18 +53,16 @@
       border-right: 3px solid #42b983 !important;
     }
 
-    /* --- 3. 压缩间距 (精致排版) --- */
+    /* --- 4. 紧凑排版优化 (严格遵守无空行原则) --- */
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
       margin-top: 20px !important;
       margin-bottom: 10px !important;
-      padding: 0 !important;
     }
     .markdown-section p, .markdown-section ul, .markdown-section ol {
-      margin-top: 0 !important;
-      margin-bottom: 8px !important;
+      margin-bottom: 10px !important;
     }
-    .markdown-section li { margin-bottom: 4px !important; }
+    .markdown-section table { display: block; overflow-x: auto; margin-bottom: 20px; }
   </style>
 </head>
 <body>
