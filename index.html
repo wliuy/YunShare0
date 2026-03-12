@@ -8,9 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 锁死搜索框与侧边栏 (还原好用斋布局) --- */
+    /* --- 1. 侧边栏宽度瘦身 (从 300px 压缩至 240px) --- */
+    :root {
+      --sidebar-width: 240px;
+    }
+    .sidebar {
+      width: var(--sidebar-width) !important;
+      padding-top: 0 !important;
+    }
+    section.content {
+      padding-left: var(--sidebar-width) !important;
+    }
+    /* 适配手机端收起逻辑 */
+    @media screen and (max-width: 768px) {
+      section.content { padding-left: 0 !important; }
+      .sidebar { width: var(--sidebar-width) !important; }
+    }
+    /* --- 2. 锁死搜索框与侧边栏 --- */
     .app-name { display: none !important; }
-    .sidebar { padding-top: 0 !important; }
     .search {
       margin: 0 !important;
       padding: 25px 15px 15px 15px !important;
@@ -21,10 +36,9 @@
     .sidebar-nav li a.active {
       color: #42b983 !important;
       font-weight: 600 !important;
-      border-right: 3px solid #42b983 !important; /* 右侧绿条 */
+      border-right: 3px solid #42b983 !important;
     }
-
-    /* --- 2. 压缩间距 (因为你现在加了空行，这里设小一点才精致) --- */
+    /* --- 3. 压缩间构 (精致排版) --- */
     .markdown-section { padding-top: 15px !important; }
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
