@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* --- 1. 仅新增：侧边栏宽度变量 (PC 240 / 手机 200) --- */
+    /* --- 0. 仅新增：侧边栏宽度精准控制 (PC 240px / 手机 200px) --- */
     :root {
       --sidebar-width: 240px;
     }
@@ -22,8 +22,7 @@
     @media screen and (max-width: 768px) {
       section.content { padding-left: 0 !important; }
     }
-
-    /* --- 2. 以下完全保留你提供的原始代码 --- */
+    /* --- 1. 锁死搜索框与侧边栏 (还原好用斋布局) --- */
     .app-name { display: none !important; }
     .sidebar { padding-top: 0 !important; }
     .search {
@@ -38,8 +37,7 @@
       font-weight: 600 !important;
       border-right: 3px solid #42b983 !important; /* 右侧绿条 */
     }
-
-    /* --- 3. 压缩间距 --- */
+    /* --- 2. 压缩间距 --- */
     .markdown-section { padding-top: 15px !important; }
     .markdown-section hr { margin: 15px 0 !important; height: 1px !important; }
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
