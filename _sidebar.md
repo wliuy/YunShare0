@@ -15,8 +15,8 @@
 
 * 💻 **电脑常用软件**
   * [系统盘镜像](p-pc/os-disk.md)
-  * [装机必备软件](p-pc/changyong.md)
-  * [其他常用工具](p-pc/tools.md)
+  * [装机必备软件](p-pc/bibei.md)
+  * [其他常用工具](p-pc/changyong.md)
 
 * 📦 **其他**
   * [资源整理](p-other/others.md)
