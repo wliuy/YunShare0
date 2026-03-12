@@ -37,6 +37,49 @@
       margin-bottom: 8px !important;
     }
     .markdown-section li { margin-bottom: 4px !important; }
+    /* --- 1. 全局调整侧边栏宽度 (电脑+手机) --- */
+  :root {
+    --sidebar-width: 240px; /* 原默认是 300px，缩减为 240px 更精致 */
+  }
+
+  .sidebar {
+    width: var(--sidebar-width) !important;
+  }
+
+  /* 确保内容区跟着侧边栏一起移动，防止重叠 */
+  section.content {
+    left: var(--sidebar-width) !important;
+  }
+
+  /* --- 2. 手机端强制默认显示侧边栏 --- */
+  @media screen and (max-width: 768px) {
+    /* 强制让侧边栏在手机端回归原位，不再隐藏 */
+    .sidebar {
+      transform: translateX(0) !important;
+    }
+
+    /* 让内容页在手机端也向右平移，腾出位置 */
+    section.content {
+      transform: translateX(var(--sidebar-width)) !important;
+      left: 0 !important; /* 修正手机端的位移逻辑 */
+    }
+
+    /* 调整手机端侧边栏切换按钮的位置，防止遮挡 Logo */
+    .sidebar-toggle {
+      left: var(--sidebar-width) !important;
+      width: auto !important;
+      padding: 10px !important;
+    }
+  }
+
+  /* --- 3. 细节微调：让搜索框和导航文字更紧凑 --- */
+  .sidebar-nav {
+    padding-left: 15px !important;
+  }
+
+  .search input {
+    font-size: 14px !important;
+  }
   </style>
 </head>
 <body>
