@@ -1,4 +1,5 @@
 * [🏠 **首页**](README.md)
+* [📱 **每日壁纸**](bizhi.md)
 
 * 🎬 **影视**
   * [安卓影视](video/android-app.md)
