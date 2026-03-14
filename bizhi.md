@@ -6,4 +6,5 @@
 ---
 ### 📥 资源下载
 * **超清壁纸合集（夸克网盘）**：[点击跳转](https://pan.quark.cn/s/4f630a246f2e)
+* **超清壁纸合集（百度网盘）**：[点击跳转](https://pan.baidu.com/s/10RA1CygDoneiOjeyU0z2Pw?pwd=rgfb) 提取码: rgfb
 ---
