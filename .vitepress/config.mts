@@ -165,9 +165,9 @@ export default defineConfig({
     },
     sidebar: [
       { text: '🎬 影视', items: [
-        { text: '★ 福利资源', link: '/1-video/movie' },
-        { text: '安卓 APP', link: '/1-video/android-app' },
-        { text: '电视 APP', link: '/1-video/tv-app' },
+        { text: '福利资源🔥', link: '/1-video/movie' },
+        { text: '安卓APP💞', link: '/1-video/android-app' },
+        { text: '电视APP', link: '/1-video/tv-app' },
         { text: '在线影院', link: '/1-video/web-sites' }
       ]},
       { text: '🎵 音乐', items: [
@@ -175,16 +175,17 @@ export default defineConfig({
         { text: '电脑 Music', link: '/2-music/music-pc' }
       ]},
       { text: '📱 手机 APP', items: [
-        { text: '常用软件', link: '/3-mobile/changyong-app' },
+        { text: '常用软件💫', link: '/3-mobile/changyong-app' },
         { text: 'Root 相关', link: '/3-mobile/root' }
       ]},
       { text: '💻 电脑软件', items: [
         { text: '系统盘镜像', link: '/4-pc/os-disk' },
         { text: '装机软件', link: '/4-pc/install' }
       ]},
-      { text: '🖼️ 每日壁纸', link: '/bizhi' },
+
       { text: '📦 其他', items: [
-        { text: '友情链接', link: '/5-other/others' }
+        { text: '每日壁纸🖼️', link: '/bizhi' },
+        { text: '友情链接🤝', link: '/5-other/others' }
       ]}
     ]
   }
