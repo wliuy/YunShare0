@@ -176,6 +176,7 @@ export default defineConfig({
       { text: '🎬 影视', items: [
         { text: '福利资源🔥', link: '/1-video/movie' },
         { text: '安卓APP💞', link: '/1-video/android-app' },
+        { text: '苹果APP💫', link: '/1-video/iPhone-app' },
         { text: '电视APP', link: '/1-video/tv-app' },
         { text: '在线影院', link: '/1-video/web-sites' }
       ]},
