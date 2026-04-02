@@ -21,7 +21,7 @@ export default defineConfig({
       'script',
       {
         defer: true,
-        src: 'https://umami.ayang.nyc.mn/tele-v1.js', 
+        src: 'https://um.ayang.nyc.mn/tele-v1.js', 
         'data-website-id': '8a450346-99be-4090-bbf7-7dd74a7d428a'
       }
     ],
