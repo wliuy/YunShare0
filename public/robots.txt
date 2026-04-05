@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /temp/
+
+# 🌟 专门给百度蜘蛛打个招呼
+User-agent: Baiduspider
+Allow: /
+
+# 🌟 告诉百度你的站点地图在哪里
+Sitemap: https://89729981.xyz/sitemap.xml

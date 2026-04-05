@@ -1,23 +1,31 @@
-// Version: 3.10.13 - 优化电脑端首页搜索框位置 | 锁定 170px 侧边栏 | 物理粉碎页脚导航
+// Version: 3.11.3 - SEO 精准关键词下沉 | 深度整合 10 大核心词汇 | 保持 170px 侧边栏
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   // 1. 彻底禁用深色模式功能
   appearance: false,
 
-  // 2. 标题优化
+  // 🌟 [标题修正] 严格设置站点名称与标签页模板
   title: "8972 资源站",
-  titleTemplate: ":title | 影视音乐资源分享",
-  description: "8972资源站：专业分享影视、音乐、电脑软件及每日壁纸。",
+  titleTemplate: "专注影视音乐破解软件资源分享", // 最终显示：8972 资源站 | 专注影视音乐破解软件资源分享
+  
+  // 🌟 [SEO 优化] 极致描述：深度植入核心关键词
+  description: "8972资源站(89729981.xyz)是一个提供全方位资源分享与破解资源的免费平台。我们专注于安卓影视与苹果ios影视APP分享，提供极速秒播体验。同时涵盖高品质音乐软件、实用电脑软件下载及每日精选手机壁纸。所有免费资源经过人工实测，致力于打造最纯净的资源共享环境。",
+  
   lang: 'zh-CN',
   cleanUrls: true,
+
+  // 🌟 [SEO 优化] 开启自动 Sitemap 生成
+  sitemap: {
+    hostname: 'https://89729981.xyz',
+    lastmodDateOnly: false
+  },
 
   // 页面标识钩子：区分首页与子页
   async transformPageData(pageData) {
     if (pageData.relativePath === 'index.md') {
       pageData.frontmatter.pageClass = 'is-home-page'
     } else {
-      // 为非首页添加子页标识类，以便 CSS 精准控制返回提示
       pageData.frontmatter.pageClass = 'is-sub-page'
     }
   },
@@ -25,6 +33,24 @@ export default defineConfig({
   head: [
     ['script', { defer: true, src: 'https://um.ayang.nyc.mn/script.js', 'data-website-id': '8a450346-99be-4090-bbf7-7dd74a7d428a' }],
     ['link', { rel: 'icon', href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>☁️</text></svg>' }],
+    
+    // 🌟 [SEO 优化] 核心 Meta 标签矩阵 - 精准匹配用户提供的关键词
+    ['meta', { name: 'keywords', content: '8972资源站,资源分享,破解资源,安卓影视,ios影视,苹果影视,音乐软件,电脑软件,手机壁纸,免费资源,89729981.xyz' }],
+    ['meta', { name: 'author', content: '8972 资源站' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['link', { rel: 'canonical', href: 'https://89729981.xyz/' }],
+    
+    // 🌟 [SEO 优化] Open Graph (社交分享优化)
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: '8972 资源站 | 专注影视音乐破解软件资源分享' }],
+    ['meta', { property: 'og:description', content: '8972资源站提供安卓影视、ios影视、破解资源及免费软件分享。' }],
+    ['meta', { property: 'og:url', content: 'https://89729981.xyz/' }],
+    ['meta', { property: 'og:site_name', content: '8972 资源站' }],
+
+    // 🌟 [SEO 优化] Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '8972 资源站 | 纯净资源分享平台' }],
+    ['meta', { name: 'twitter:description', content: '免费分享安卓影视、苹果影视、破解资源、音乐软件及手机壁纸。' }],
 
     ['style', {}, `
       /* 🌟 [1] 全站净化与基础重置 */
@@ -32,7 +58,7 @@ export default defineConfig({
       * { scrollbar-width: none; -ms-overflow-style: none; }
       .VPNavBarAppearance, .VPNavBarHamburger { display: none !important; }
       
-      /* 彻底粉碎所有返回顶部残留（悬浮球与 LocalNav 链接） */
+      /* 彻底粉碎返回顶部残留 */
       .VPReturnToTop, .VPLocalNav .top-link, .VPLocalNav .outline-link { 
         display: none !important; 
         width: 0 !important; 
@@ -40,11 +66,8 @@ export default defineConfig({
         overflow: hidden !important; 
       }
 
-      /* 🌟 [2] 强力抹除文档页脚（上一页/下一页导航条） */
-      .VPDocFooter { 
-        display: none !important; 
-        visibility: hidden !important;
-      }
+      /* 🌟 [2] 强力抹除页脚导航 */
+      .VPDocFooter { display: none !important; visibility: hidden !important; }
 
       /* 🌟 [3] 手机端侧边栏宽度强行锁定 (170px 窄版) */
       @media (max-width: 959px) {
@@ -58,22 +81,19 @@ export default defineConfig({
         }
       }
 
-      /* 🌟 [4] 手机端子页标题设计：直接显示返回引导文字 */
+      /* 🌟 [4] 手机端子页标题设计 */
       @media (max-width: 959px) {
         .is-sub-page .VPNavBarTitle .title::after {
           content: " 👈返回首页";
           display: inline-block;
           font-size: 11px;
           font-weight: normal;
-          color: #e11d48; /* 主题红色，引导感强 */
+          color: #e11d48;
           margin-left: 6px;
           vertical-align: middle;
         }
-        
-        /* 适配极窄屏幕，防止标题被挤乱 */
         @media (max-width: 380px) {
           .is-sub-page .VPNavBarTitle .title { font-size: 14px !important; }
-          .is-sub-page .VPNavBarTitle .title::after { font-size: 10px; margin-left: 4px; }
         }
       }
 
@@ -82,7 +102,7 @@ export default defineConfig({
         .is-sub-page .VPNavBarTitle .title::after { display: none !important; }
       }
 
-      /* 🌟 [6] 首页全屏布局逻辑（保持不变） */
+      /* 🌟 [6] 首页布局逻辑 (保持全屏居中) */
       .is-home-page .VPHome {
         margin: 0 !important;
         padding: 0 !important;
@@ -94,14 +114,6 @@ export default defineConfig({
         align-items: center !important;
       }
       .is-home-page .VPHero { display: none !important; }
-
-      .is-home-page .VPFeatures,
-      .is-home-page .VPFeatures .container {
-        width: auto !important;
-        max-width: none !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-      }
 
       .is-home-page .VPFeatures .items {
         display: inline-flex !important;
@@ -120,7 +132,6 @@ export default defineConfig({
         background-color: var(--vp-c-bg-soft) !important;
         border-radius: 16px !important;
         display: flex !important;
-        transition: all 0.25s ease !important;
       }
 
       .is-home-page .VPFeature .box {
@@ -133,70 +144,35 @@ export default defineConfig({
       .is-home-page .VPFeature .title { font-weight: 800 !important; }
       .is-home-page .VPFeature .icon, .is-home-page .VPFeature .details { display: none !important; }
 
-      /* 💻 电脑端适配：比例锁定与搜索框右对齐 */
+      /* 💻 电脑端适配 */
       @media (min-width: 960px) {
         .VPNavBarMenu { display: none !important; }
-        
-        /* 首页搜索框放置于右侧对应位置 */
         .is-home-page .VPNavBarSearch {
           flex-grow: 1 !important;
           display: flex !important;
           justify-content: flex-end !important;
         }
-        
-        .is-home-page .VPNavBarSearch button { width: auto !important; height: 32px !important; }
-
         .is-home-page .VPFeatures .items { gap: 24px !important; }
-        .is-home-page .VPFeature { border-radius: 24px !important; }
         .is-home-page .VPFeature .box {
           height: 90px !important;
           padding: 0 100px !important;
         }
         .is-home-page .VPFeature .title { font-size: 32px !important; }
-        
-        .is-home-page .VPFeature:hover {
-          transform: translateY(-4px) !important;
-          border-color: var(--vp-c-brand) !important;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
-        }
       }
 
-      /* 📱 手机端适配：呼吸感布局 */
+      /* 📱 手机端适配 */
       @media (max-width: 959px) {
         .is-home-page .VPFeature .box {
           height: 64px !important;
           padding: 0 50px !important;
         }
         .is-home-page .VPFeature .title { font-size: 20px !important; }
-
         .is-home-page .VPNavBarSearch {
           flex-grow: 1 !important;
           display: flex !important;
           justify-content: flex-end !important;
           padding-right: 15px !important;
         }
-        .is-home-page .VPNavBarSearch button {
-          background-color: var(--vp-c-bg-soft) !important;
-          border: 1px solid var(--vp-c-divider) !important;
-          border-radius: 20px !important;
-          width: 150px !important;
-          height: 36px !important;
-          padding: 0 12px !important;
-        }
-        .is-home-page .VPNavBarSearch .DocSearch-Button-Container {
-          display: flex !important;
-          flex-direction: row-reverse !important;
-          justify-content: space-between !important;
-          width: 100% !important;
-          margin: 0 !important;
-        }
-        .is-home-page .DocSearch-Button-Placeholder {
-          display: inline-block !important;
-          font-size: 13px !important;
-          flex: 1 !important;
-          text-align: left !important;
-        }
-        .is-home-page .DocSearch-Button-Keys { display: none !important; }
       }
 
       .is-home-page .vp-doc, .is-home-page .VPFooter { display: none !important; }
@@ -207,11 +183,7 @@ export default defineConfig({
     logo: '☁️',
     siteTitle: '8972 资源站',
     outline: false,
-
-    // 🌟 顶部导航项
     nav: [],
-
-    // 🌟 侧边栏：全局统一列表模式
     sidebar: [
       {
         text: '🎬 影视分类',
@@ -257,11 +229,9 @@ export default defineConfig({
         ]
       }
     ],
-
-    // 🌟 汉化与搜索
     sidebarMenuLabel: '目录',
     returnToTopLabel: '返回顶部',
-    docFooter: false, // 彻底禁用文档页脚（上一页/下一页）
+    docFooter: false, 
     search: {
       provider: 'local',
       options: {
