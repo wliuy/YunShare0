@@ -1,5 +1,7 @@
 # 🎵 电脑音乐软件汇总
-> 整理了一些好用的电脑端音乐播放器，支持多源搜索与高品质播放。
+
+## 📥 资源下载
+#### **软件下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1NUNv-j0kghfhaGep4myk0Q?pwd=52pj)
 ---
 ### 1. MusicFree(桌面版)
 * 地址1： `https://musicfreepluginshub.2020818.xyz/plugins.json`。
@@ -21,7 +23,3 @@
 ### 5. 在线听歌/歌曲下载网站
 * ① GD音乐台：[https://music.gdstudio.org](https://music.gdstudio.org)
 * ② 无损音乐下载：[https://flac.music.hi.cn](https://flac.music.hi.cn)
-
-## 📥 资源下载
-
-* **软件下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1NUNv-j0kghfhaGep4myk0Q?pwd=52pj)
