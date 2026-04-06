@@ -1,4 +1,4 @@
-# 💻 电脑装机必备软件汇总
+# 💻 电脑装机软件
 ## 📥 资源下载
 * **装机工具全集（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1Ew_AlmWyBR4oFe4RSplVZg?pwd=52pj)
 ---

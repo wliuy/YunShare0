@@ -4,7 +4,7 @@
 * **夸克网盘**：[点击跳转保存](https://pan.quark.cn/s/d4af545e0931)
 * **百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1v_-KTZq9vchmBvQM9raHNg?pwd=52pj)
 ---
-#### 💡特别说明：破解版软件由于官方封锁可能不定时失效，请下载新日期的版本。
+#### 💡破解版软件由于官方封锁可能不定时失效，请下载新日期版本。
 
 > 特别推荐：
 
@@ -14,7 +14,7 @@
 | ★★★★☆ | **新大师兄影视_by东明** | 已解锁高级功能，去广告。 |
 | ★★★★☆ | **大师兄影视 Ver.3.4.3** | 已解锁高级功能，去广告。 |
 | ★★★★☆ | **FM影视手机端** | Tvbox纯净版，需自行配置源 | |
-
+---
 ### **Tvbox系列源导入路径**：`设置` -> `点播`
   复制以下链接填入：
  * **饭太硬：** `http://www.饭太硬.com/tv/`
@@ -23,4 +23,4 @@
  * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
 
 #### 其他源网站：[https://cyuan.netlify.app/](https://cyuan.netlify.app/)
-#### 饭太硬官网：[https://www.xn--sss604efuw.com/](https://www.xn--sss604efuw.com/)
+#### 饭太硬官网：[https://www.饭太硬.com/](https://www.饭太硬.com/)

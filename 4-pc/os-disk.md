@@ -1,4 +1,4 @@
-# 💻 系统盘镜像汇总
+# 💻 系统盘镜像
 ## 📥 资源下载
 * **系统下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1qaPeplL1PThLUqg6U_usYw?pwd=52pj)
 ---
