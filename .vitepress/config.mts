@@ -7,10 +7,10 @@ export default defineConfig({
 
   // 🌟 [标题修正] 严格设置站点名称与标签页模板
   title: "8972 资源站",
-  titleTemplate: "专注影视音乐破解软件资源分享", // 最终显示：8972 资源站 | 专注影视音乐破解软件资源分享
+  titleTemplate: "专注影视音乐绿色软件资源分享", // 最终显示：8972 资源站 | 专注影视音乐绿色软件资源分享
   
   // 🌟 [SEO 优化] 极致描述：深度植入核心关键词
-  description: "8972资源站(89729981.xyz)是一个提供全方位资源分享与破解资源的免费平台。我们专注于安卓影视与苹果ios影视APP分享，提供极速秒播体验。同时涵盖高品质音乐软件、实用电脑软件下载及每日精选手机壁纸。所有免费资源经过人工实测，致力于打造最纯净的资源共享环境。",
+  description: "8972资源站(89729981.xyz)是一个提供全方位资源分享与绿色资源的免费平台。我们专注于安卓影视与苹果ios影视APP分享，提供极速秒播体验。同时涵盖高品质音乐软件、实用电脑软件下载及每日精选手机壁纸。所有免费资源经过人工实测，致力于打造最纯净的资源共享环境。",
   
   lang: 'zh-CN',
   cleanUrls: true,
@@ -35,22 +35,22 @@ export default defineConfig({
     ['link', { rel: 'icon', href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>☁️</text></svg>' }],
     
     // 🌟 [SEO 优化] 核心 Meta 标签矩阵 - 精准匹配用户提供的关键词
-    ['meta', { name: 'keywords', content: '8972资源站,资源分享,破解资源,安卓影视,ios影视,苹果影视,音乐软件,电脑软件,手机壁纸,免费资源,89729981.xyz' }],
+    ['meta', { name: 'keywords', content: '8972资源站,资源分享,绿色资源,安卓影视,ios影视,苹果影视,音乐软件,电脑软件,手机壁纸,免费资源,89729981.xyz' }],
     ['meta', { name: 'author', content: '8972 资源站' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['link', { rel: 'canonical', href: 'https://89729981.xyz/' }],
     
     // 🌟 [SEO 优化] Open Graph (社交分享优化)
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: '8972 资源站 | 专注影视音乐破解软件资源分享' }],
-    ['meta', { property: 'og:description', content: '8972资源站提供安卓影视、ios影视、破解资源及免费软件分享。' }],
+    ['meta', { property: 'og:title', content: '8972 资源站 | 专注影视音乐绿色软件资源分享' }],
+    ['meta', { property: 'og:description', content: '8972资源站提供安卓影视、ios影视、绿色资源及免费软件分享。' }],
     ['meta', { property: 'og:url', content: 'https://89729981.xyz/' }],
     ['meta', { property: 'og:site_name', content: '8972 资源站' }],
 
     // 🌟 [SEO 优化] Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: '8972 资源站 | 纯净资源分享平台' }],
-    ['meta', { name: 'twitter:description', content: '免费分享安卓影视、苹果影视、破解资源、音乐软件及手机壁纸。' }],
+    ['meta', { name: 'twitter:description', content: '免费分享安卓影视、苹果影视、绿色资源、音乐软件及手机壁纸。' }],
 
     ['style', {}, `
       /* 🌟 [1] 全站净化与基础重置 */
