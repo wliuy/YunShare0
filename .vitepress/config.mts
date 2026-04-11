@@ -193,7 +193,6 @@ export default defineConfig({
           { text: '苹果影视 💫', link: '/1-video/iPhone-app' },
           { text: '影视网站', link: '/1-video/web-sites' },
           { text: '电视APP', link: '/1-video/tv-app' },
-          { text: '影视资源 🎁', link: '/1-video/movie' }
         ]
       },
       {
