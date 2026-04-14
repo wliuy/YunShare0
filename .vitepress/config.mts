@@ -220,7 +220,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '🖼️ 手机壁纸',
+        text: '🛸 其他资源',
         collapsed: false,
         items: [
           { text: '每日壁纸 🖼️', link: '/bizhi' },
