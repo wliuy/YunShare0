@@ -231,9 +231,25 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     returnToTopLabel: '返回顶部',
     docFooter: false, 
+// 🌟 [搜索优化] 解决中文搜不到、搜不全的问题
     search: {
       provider: 'local',
       options: {
+        // 关键配置：自定义分词器
+        miniSearch: {
+          options: {
+            /* 这个正则的作用：
+              1. 遇到空格、逗号、句号拆分
+              2. 遇到中文字符，强行拆分成单个汉字（虽然暴力但对中文搜索极其有效）
+            */
+            tokenize: (str) => str.split(/[\s,.-]+|(?<=[\u4e00-\u9fa5])|(?=[\u4e00-\u9fa5])/).filter(Boolean)
+          },
+          searchOptions: {
+            fuzzy: 0.2,   // 开启模糊匹配，错一个字也能搜到
+            prefix: true,  // 开启前缀匹配，搜“壁”就能出“壁纸”
+            boost: { title: 4, text: 2, titles: 1 } // 提升标题权重
+          }
+        },
         translations: {
           button: { buttonText: '搜索资源...' },
           modal: {
