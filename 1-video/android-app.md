@@ -1,8 +1,8 @@
 # 🎬 安卓 Android 观影
 
-### 📥 资源下载
-* **夸克网盘**：[点击跳转保存](https://pan.quark.cn/s/d4af545e0931)
-* **百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1v_-KTZq9vchmBvQM9raHNg?pwd=52pj)
+::: info 📥 资源下载
+**百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1v_-KTZq9vchmBvQM9raHNg?pwd=52pj)
+:::
 ---
 #### 💡绿化版软件由于官方封锁可能不定时失效，请下载新日期版本。
 

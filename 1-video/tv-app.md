@@ -1,7 +1,8 @@
 # 📺 电视端影视资源
 
-### 📥 资源下载
-#### **百度网盘：**[点击跳转保存](https://pan.baidu.com/s/1ieJPp83G7iMCNr_mMUNcmQ?pwd=52pj)
+::: info 📥 资源下载
+**百度网盘：**[点击跳转保存](https://pan.baidu.com/s/1ieJPp83G7iMCNr_mMUNcmQ?pwd=52pj)
+:::
 ---
 > **特别推荐：**
 

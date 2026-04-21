@@ -1,6 +1,9 @@
 # 💻 系统盘镜像
-## 📥 资源下载
-* **系统下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1qaPeplL1PThLUqg6U_usYw?pwd=52pj)
+
+::: info 📥 资源下载
+**系统下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1qaPeplL1PThLUqg6U_usYw?pwd=52pj)
+:::
+
 ---
 ### 🔥 原版系统，拒绝第三方修改与捆绑，享受最纯净的官方初始环境。
 

@@ -1,6 +1,9 @@
 # 💻 电脑装机软件
-## 📥 资源下载
-* **装机工具全集（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1Ew_AlmWyBR4oFe4RSplVZg?pwd=52pj)
+
+::: info 📥 资源下载
+**百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1Ew_AlmWyBR4oFe4RSplVZg?pwd=52pj)
+:::
+
 ---
 | 所属分类 | 软件名称 (网盘对应) | 经典特色 | 推荐程度 |
 | :--- | :--- | :--- | :---: |
