@@ -1,4 +1,4 @@
-// Version: 3.11.3 - SEO 精准关键词下沉 | 深度整合 10 大核心词汇 | 保持 170px 侧边栏
+// Version: 3.15.0 - 手机端全站搜索位绝对对齐 | 社交矩阵 Emoji 版 | 电脑端配置回归
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -7,9 +7,9 @@ export default defineConfig({
 
   // 🌟 [标题修正] 严格设置站点名称与标签页模板
   title: "8972 资源站",
-  titleTemplate: "专注影视音乐绿色软件资源分享", // 最终显示：8972 资源站 | 专注影视音乐绿色软件资源分享
+  titleTemplate: "专注影视音乐绿色软件资源分享", 
   
-  // 🌟 [SEO 优化] 极致描述：深度植入核心关键词
+  // 🌟 [SEO 优化] 极致描述
   description: "8972资源站(89729981.xyz)是一个提供全方位资源分享与绿色资源的免费平台。我们专注于安卓影视与苹果ios影视APP分享，提供极速秒播体验。同时涵盖高品质音乐软件、实用电脑软件下载及每日精选手机壁纸。所有免费资源经过人工实测，致力于打造最纯净的资源共享环境。",
   
   lang: 'zh-CN',
@@ -34,7 +34,7 @@ export default defineConfig({
     ['script', { defer: true, src: 'https://um.ayang.nyc.mn/script.js', 'data-website-id': '8a450346-99be-4090-bbf7-7dd74a7d428a' }],
     ['link', { rel: 'icon', href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>☁️</text></svg>' }],
     
-    // 🌟 [SEO 优化] 核心 Meta 标签矩阵 - 精准匹配用户提供的关键词
+    // 🌟 [SEO 优化] 核心 Meta 标签矩阵
     ['meta', { name: 'keywords', content: '8972资源站,资源分享,绿色资源,安卓影视,ios影视,苹果影视,音乐软件,电脑软件,手机壁纸,免费资源,89729981.xyz' }],
     ['meta', { name: 'author', content: '8972 资源站' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
@@ -46,11 +46,6 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: '8972资源站提供安卓影视、ios影视、绿色资源及免费软件分享。' }],
     ['meta', { property: 'og:url', content: 'https://89729981.xyz/' }],
     ['meta', { property: 'og:site_name', content: '8972 资源站' }],
-
-    // 🌟 [SEO 优化] Twitter Card
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: '8972 资源站 | 纯净资源分享平台' }],
-    ['meta', { name: 'twitter:description', content: '免费分享安卓影视、苹果影视、绿色资源、音乐软件及手机壁纸。' }],
 
     ['style', {}, `
       /* 🌟 [1] 全站净化与基础重置 */
@@ -144,7 +139,7 @@ export default defineConfig({
       .is-home-page .VPFeature .title { font-weight: 800 !important; }
       .is-home-page .VPFeature .icon, .is-home-page .VPFeature .details { display: none !important; }
 
-      /* 💻 电脑端适配 */
+      /* 💻 电脑端布局（仅首页搜索框靠右，子页保持默认） */
       @media (min-width: 960px) {
         .VPNavBarMenu { display: none !important; }
         .is-home-page .VPNavBarSearch {
@@ -160,18 +155,40 @@ export default defineConfig({
         .is-home-page .VPFeature .title { font-size: 32px !important; }
       }
 
-      /* 📱 手机端适配 */
+      /* 📱 手机端布局：首页与子页搜索位绝对一致 */
       @media (max-width: 959px) {
+        /* 核心：确保手机端全站搜索图标都占据剩余空间并向右对齐，位置固定 */
+        .VPNavBarSearch {
+          flex-grow: 1 !important;
+          display: flex !important;
+          justify-content: flex-end !important;
+          padding-right: 0px !important;
+          order: 10 !important; /* 强制其排在最右侧 */
+        }
+
         .is-home-page .VPFeature .box {
           height: 64px !important;
           padding: 0 50px !important;
         }
         .is-home-page .VPFeature .title { font-size: 20px !important; }
-        .is-home-page .VPNavBarSearch {
-          flex-grow: 1 !important;
+
+        /* 社交图标排在搜索左侧，不破坏搜索的最右定位 */
+        .is-sub-page .VPNavBarSocialLinks {
           display: flex !important;
-          justify-content: flex-end !important;
-          padding-right: 15px !important;
+          order: 5 !important; /* 序号小于搜索框的 10，使其在左侧排列 */
+          margin-right: 5px !important;
+        }
+        .is-sub-page .VPNavBarSocialLinks a {
+          width: 32px !important;
+        }
+      }
+
+      /* 🌟 [7] 社交链接显示控制 */
+      .is-home-page .VPNavBarSocialLinks { display: none !important; }
+      @media (min-width: 960px) {
+        .is-sub-page .VPNavBarSocialLinks { 
+          display: flex !important; 
+          margin-right: 20px;
         }
       }
 
@@ -228,26 +245,42 @@ export default defineConfig({
         ]
       }
     ],
+
+    // 🌟 [社交矩阵] 顺序：哔哩哔哩、小红书、抖音、YouTube
+    socialLinks: [
+      { 
+        icon: { svg: '<svg viewBox="0 0 24 24"><text x="0" y="18" font-size="20">📺</text></svg>' }, 
+        link: 'https://space.bilibili.com/161365760' 
+      },
+      { 
+        icon: { svg: '<svg viewBox="0 0 24 24"><text x="0" y="18" font-size="20">📕</text></svg>' }, 
+        link: 'https://www.xiaohongshu.com/user/profile/691d31df000000003202b636' 
+      },
+      { 
+        icon: { svg: '<svg viewBox="0 0 24 24"><text x="0" y="18" font-size="20">🎵</text></svg>' }, 
+        link: 'https://v.douyin.com/zbT67CNeNW0/' 
+      },
+      { 
+        icon: { svg: '<svg viewBox="0 0 24 24"><text x="0" y="18" font-size="20">▶️</text></svg>' }, 
+        link: 'https://www.youtube.com/@AooHu' 
+      }
+    ],
+
     sidebarMenuLabel: '目录',
     returnToTopLabel: '返回顶部',
     docFooter: false, 
-// 🌟 [搜索优化] 解决中文搜不到、搜不全的问题
+
     search: {
       provider: 'local',
       options: {
-        // 关键配置：自定义分词器
         miniSearch: {
           options: {
-            /* 这个正则的作用：
-              1. 遇到空格、逗号、句号拆分
-              2. 遇到中文字符，强行拆分成单个汉字（虽然暴力但对中文搜索极其有效）
-            */
             tokenize: (str) => str.split(/[\s,.-]+|(?<=[\u4e00-\u9fa5])|(?=[\u4e00-\u9fa5])/).filter(Boolean)
           },
           searchOptions: {
-            fuzzy: 0.2,   // 开启模糊匹配，错一个字也能搜到
-            prefix: true,  // 开启前缀匹配，搜“壁”就能出“壁纸”
-            boost: { title: 4, text: 2, titles: 1 } // 提升标题权重
+            fuzzy: 0.2, 
+            prefix: true,
+            boost: { title: 4, text: 2, titles: 1 } 
           }
         },
         translations: {
