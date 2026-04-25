@@ -4,6 +4,10 @@
 **软件下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1BYcnryaYnHdAd9mvUhRQwg?pwd=musi)
 :::
 
+## ✨ 最近更新 (2026-04-25)
+
+* **基于B站实现的音乐客户端** 👉 **bilimusic** 🌟 `GitHub大神开发` [点击跳转保存](https://pan.baidu.com/s/1WYpt6mjmB4Htb5lvh5Foog?pwd=52pj)
+
 ## 🎵 特别推荐：
 
 📀 **音悦** 👉 全网音乐：可绑定网易云、QQ音悦、导入酷狗、酷我歌单
