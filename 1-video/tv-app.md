@@ -23,6 +23,7 @@
 **源导入路径**：`设置` -> `点播`
   复制以下链接，通过 APP 提供的扫码或网页推送功能填入：
  * **饭太硬：** `http://www.饭太硬.com/tv/`
+ * **OK猫：** `http://ok521.top/tv`
  * **站长自建：** `https://my.yang.pp.ua/tvbox.json`
  * **开心：** `https://bitbucket.org/guot55/bhmb/raw/main/TVBoxOSC/omg.json`
  * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
