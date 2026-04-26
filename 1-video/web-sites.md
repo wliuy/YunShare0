@@ -5,6 +5,11 @@
 ### 🌈 影牛🐮 ：[https://moovie.c2v2.com](https://moovie.c2v2.com/)
 ---
 ### 🌈 金牌影院：[https://www.hskjjglo.com](https://www.hskjjglo.com)
+---
+### 🌈 饭搭子：[https://fdzys.com/](https://fdzys.com/)
+---
+### 🌈 飞快TV：[https://feikuai.tv/](https://feikuai.tv/)
+
 
 ## 💡 观影小贴士
 
