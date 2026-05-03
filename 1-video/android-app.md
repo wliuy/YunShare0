@@ -16,9 +16,7 @@ Tips:手机下载时，可以先把软件的后缀apk改成txt，会有加速效
 | **追忆影视 3.9.0** | **4K无广，安装即用** | 20260501 ✨ |
 | **剧岛 v2.1.0** | **美剧、奈非Netflix、短剧、直播** | 20260423 ✨ |
 | **PiliPlus** | **哔哩哔哩第三方客户端** | 20260417 |
-| **帧不戳4K_2.1.0** | **4K无广，安装即用** | 失效 |
 | **FM影视手机端** | **需手动配置源** | 20260319 |
-| **橘汁3.0.1.9** | **4K无广，安装即用** | 失效 |
 ---
 ### ✨ **源导入路径**：`设置` -> `点播`
   复制以下链接填入：
@@ -28,5 +26,4 @@ Tips:手机下载时，可以先把软件的后缀apk改成txt，会有加速效
  * **开心：** `https://bitbucket.org/guot55/bhmb/raw/main/TVBoxOSC/omg.json`
  * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
 
-#### 🌈 其他源：[https://cyuan.netlify.app/](https://cyuan.netlify.app/)
-#### 🌈 饭太硬官网：[https://www.饭太硬.com/](https://www.饭太硬.com/)
+#### 🌈 其他源汇总网站：[https://cyuan.netlify.app/](https://cyuan.netlify.app/)
