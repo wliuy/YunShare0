@@ -1,4 +1,4 @@
-// Version: 3.15.0 - 手机端全站搜索位绝对对齐 | 社交矩阵 Emoji 版 | 电脑端配置回归
+// Version: 3.16.0 - 强化 PC 端百度 SEO | 手机端全站搜索位绝对对齐 | 社交矩阵 Emoji 版
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -9,8 +9,8 @@ export default defineConfig({
   title: "8972 资源站",
   titleTemplate: "专注影视音乐绿色软件资源分享", 
   
-  // 🌟 [SEO 优化] 极致描述
-  description: "8972资源站(89729981.xyz)是一个提供全方位资源分享与绿色资源的免费平台。我们专注于安卓影视与苹果ios影视APP分享，提供极速秒播体验。同时涵盖高品质音乐软件、实用电脑软件下载及每日精选手机壁纸。所有免费资源经过人工实测，致力于打造最纯净的资源共享环境。",
+  // 🌟 [SEO 优化] 极致描述：平衡 PC 与移动端权重
+  description: "8972资源站(89729981.xyz)提供全双端资源分享。我们不仅专注于安卓影视与苹果iOS影视APP分享，更涵盖高品质PC端音乐软件、Windows系统镜像及装机必备绿色软件下载。所有资源人工实测，打造纯净、极速的 PC 与移动端资源共享环境。",
   
   lang: 'zh-CN',
   cleanUrls: true,
@@ -34,6 +34,9 @@ export default defineConfig({
     ['script', { defer: true, src: 'https://um.ayang.nyc.mn/script.js', 'data-website-id': '8a450346-99be-4090-bbf7-7dd74a7d428a' }],
     ['link', { rel: 'icon', href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>☁️</text></svg>' }],
     
+    // 🌟 [SEO 补救] 明确告知百度双端适配，防止 PC 端搜不到
+    ['meta', { name: 'applicable-device', content: 'pc,mobile' }],
+    
     // 🌟 [SEO 优化] 核心 Meta 标签矩阵
     ['meta', { name: 'keywords', content: '8972资源站,资源分享,绿色资源,安卓影视,ios影视,苹果影视,音乐软件,电脑软件,手机壁纸,免费资源,89729981.xyz' }],
     ['meta', { name: 'author', content: '8972 资源站' }],
@@ -46,6 +49,24 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: '8972资源站提供安卓影视、ios影视、绿色资源及免费软件分享。' }],
     ['meta', { property: 'og:url', content: 'https://89729981.xyz/' }],
     ['meta', { property: 'og:site_name', content: '8972 资源站' }],
+
+    // 🌟 [SEO 优化] JSON-LD 结构化数据：强行喂给百度 PC 蜘蛛
+    [
+      'script',
+      { type: 'application/ld+json' },
+      JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://89729981.xyz/",
+        "name": "8972资源站",
+        "description": "专注影视音乐及电脑装机软件绿色资源分享",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://89729981.xyz/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      })
+    ],
 
     ['style', {}, `
       /* 🌟 [1] 全站净化与基础重置 */
