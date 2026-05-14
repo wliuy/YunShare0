@@ -1,7 +1,7 @@
 # 🎵 电脑音乐软件
 
 ::: info 📥 资源下载
-**软件下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1NUNv-j0kghfhaGep4myk0Q?pwd=52pj)
+**百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1NUNv-j0kghfhaGep4myk0Q?pwd=52pj)
 :::
 
 ## 📀 在线听歌网站

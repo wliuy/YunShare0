@@ -19,11 +19,17 @@
  * **电报分享源：** `https://my.yang.pp.ua/webview1.txt`
  * **站长自建源：** `https://my.yang.pp.ua/webv.txt`
 ---
-### 📺 Tvbox源（点播、直播）：
-**源导入路径**：`设置` -> `点播`
-  复制以下链接，通过 APP 提供的扫码或网页推送功能填入：
+
+### 📺 **Tvbox源（点播、直播）源导入路径**：`设置` -> `点播`
+  复制以下链接填入：
  * **饭太硬：** `http://www.饭太硬.com/tv/`
- * **OK猫：** `http://ok521.top/tv`
+ * **饭太硬备用1：** `http://www.饭太硬.net/tv`
+ * **饭太硬备用2：** `http://fty.xxooo.cf/tv`
+ * **饭太硬备用3：** `https://raw.atomgit.com/xxxooo/fan/blobs/cef5f441c422cffe4852e0fc8b102f9be6d2bb2b/in.bmp`
+
+ * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
  * **站长自建：** `https://my.yang.pp.ua/tvbox.json`
  * **开心：** `https://bitbucket.org/guot55/bhmb/raw/main/TVBoxOSC/omg.json`
- * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
+ * **OK猫：** `http://ok521.top/tv`
+
+#### 🌈 其他源汇总网站：[https://cyuan.netlify.app/](https://cyuan.netlify.app/)

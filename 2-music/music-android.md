@@ -1,7 +1,7 @@
 # 📱 安卓手机音乐
 
 ::: info 📥 资源下载
-**软件下载（百度网盘）**：[点击跳转保存](https://pan.baidu.com/s/1BYcnryaYnHdAd9mvUhRQwg?pwd=musi)
+**百度网盘**：[点击跳转保存](https://pan.baidu.com/s/1BYcnryaYnHdAd9mvUhRQwg?pwd=musi)
 :::
 
 ## ✨ 最近更新 (2026-04-25)
