@@ -22,10 +22,10 @@
 
 ### 📺 **Tvbox源（点播、直播）源导入路径**：`设置` -> `点播`
   复制以下链接填入：
- * **饭太硬：** `http://www.饭太硬.com/tv/`
- * **饭太硬备用1：** `http://www.饭太硬.net/tv`
- * **饭太硬备用2：** `http://fty.xxooo.cf/tv`
- * **饭太硬备用3：** `https://raw.atomgit.com/xxxooo/fan/blobs/cef5f441c422cffe4852e0fc8b102f9be6d2bb2b/in.bmp`
+ 
+ * **饭太硬：** `http://www.饭太硬.net/tv`
+ * **饭太硬备用1：** `http://fty.xxooo.cf/tv`
+ * **饭太硬备用2：** `https://raw.atomgit.com/xxxooo/fan/blobs/cef5f441c422cffe4852e0fc8b102f9be6d2bb2b/in.bmp`
 
  * **宫殿在线源：** `https://gongdian.top/fongmi/gongdian`
  * **站长自建：** `https://my.yang.pp.ua/tvbox.json`
